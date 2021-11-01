@@ -13,4 +13,7 @@
   - **Intermediate operations**:
     - Such as *filter, map, sort* return a **stream** so that we can **chain** them together.
   - **Terminal operations**:
-    - Such as forEach, collect or reduce are either void or return a non-stream result.
+    - Such as forEach, collect or reduce are either void or return a non-stream result. Only one terminal operation is allowed to be used in one stream.
+      - *forEach* applies the same function to each element.
+      - *collect* saves the elements into a collection.
+      - *other option* **reduce** the stream to a single summary element.
