@@ -7,6 +7,9 @@ import java.util.function.Predicate;
 
 public class BasicStream {
 	public static void main(String[] args) {
+		/*
+		Example 1: Declare Function, Predicate and Consumer
+		*/
 		/* Declare a function which takes an integer as the input, and produce an integer as an output by multiply the input by 2 */
 		Function<Integer, Integer> function = a -> a * 2;
 
@@ -22,7 +25,13 @@ public class BasicStream {
 		* We could use it because println is a static function of PrintStream out
 		*/
 
-		Arrays.asList(1,2,3,4,5).stream().map(function).filter(predicate).forEach(consumer);
+		/*
+		Now we are using the **forEach** terminal operation
+		*/
+		Arrays.asList(1,2,3,4,5).stream() // return a stream
+				.map(function)
+				.filter(predicate)
+				.forEach(consumer);
 		/*
 		* Produces:
 		2
@@ -30,5 +39,21 @@ public class BasicStream {
 		6
 		8
 		* */
+
+		/*
+		Example 2: Now we are using a **min** as a terminal operation
+		 */
+		int[] array = new int[]{1,2,3,4,5};
+		int min = Arrays.stream(array) // return an IntStream
+				.map(operand -> operand * 2) // cannot use function anymore because it requires an IntUnaryOperator
+				.filter(value -> value < 10) // cannot use predicate anymore because it requires an IntPredicate
+				.min() // return an optional
+				.getAsInt();
+
+		System.out.printf("Min is " + min);
+		/*
+		* Produces:
+		Min is 2
+		 */
 	}
 }
