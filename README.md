@@ -1,6 +1,9 @@
 # Java Functional Programming
 ## Java 8 stream
-- My notes and walkthrough from Joe James - https://youtu.be/t1-YZ6bF-g0
+- My notes and walkthrough from:
+  - Joe James - https://youtu.be/t1-YZ6bF-g0
+  - How to use map, filter, and collect methods of Java Stream API: https://medium.com/javarevisited/how-to-use-streams-map-filter-and-collect-methods-in-java-1e13609a318b
+  - Cheatsheet: https://satishkathiriya99.medium.com/java-stream-api-cheatsheet-4e8c10d799dc
 - Streams bring functional programming to Java, supported from Java 8
 - Advantages:
   - More efficient Java programmer
